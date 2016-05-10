@@ -55,12 +55,6 @@ public class MainActivity extends ReactActivity {
   private CodePush _codePush;
   private ReactNativePushNotificationPackage _pushNotification;
   private CallbackManager mCallbackManager;
-
-    @Override
-    protected String getJSBundleFile() {
-        return this._codePush.getBundleUrl("index.android.bundle");
-    }
-
     /**
      * Returns the name of the main component registered from JavaScript.
      * This is used to schedule rendering of the component.

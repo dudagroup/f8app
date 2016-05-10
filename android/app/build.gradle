@@ -102,12 +102,10 @@ android {
             // Note that Facebook login won't work unless you change
             // strings.xml/facebook_app_id and configure your own app
 
-            if (project.hasProperty("F8APP_RELEASE_STORE_FILE")) {
-              storeFile file(F8APP_RELEASE_STORE_FILE)
-              storePassword F8APP_RELEASE_STORE_PASSWORD
-              keyAlias F8APP_RELEASE_KEY_ALIAS
-              keyPassword F8APP_RELEASE_KEY_PASSWORD
-            }
+          storeFile file(System.getenv('KARMA_buildpack_keystore'))
+          storePassword System.getenv('KARMA_buildpack_keystorePassword')
+          keyAlias System.getenv('KARMA_buildpack_keystoreAlias')
+          keyPassword System.getenv('KARMA_buildpack_keystoreAliasPassword')
         }
     }
     splits {
